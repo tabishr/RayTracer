@@ -1,3 +1,6 @@
+#ifndef _RGBCOLOR_HH_
+#define _RGBCOLOR_HH_
+
 #include <iostream>
 
 // RGB color representation
@@ -35,3 +38,5 @@ public:
 // Allow RHS versions of certain arithmetic operations.
 const RGBColor operator*(float scalar, const RGBColor &RGBColor_RHS);
 std::ostream & operator<<(std::ostream &os, const RGBColor &c);
+
+#endif /* _RGBCOLOR_HH_ */

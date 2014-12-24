@@ -1,3 +1,6 @@
+#ifndef _VECTOR3F_HH_
+#define _VECTOR3F_HH_
+
 #include <iostream>
 
 // 3D vector representation
@@ -39,3 +42,5 @@ public:
 // Allow RHS versions of certain arithmetic operations.
 const Vector3F operator*(float scalar, const Vector3F &Vector3F_RHS);
 std::ostream & operator<<(std::ostream &os, const Vector3F &v);
+
+#endif /* _VECTOR3F_HH_ */
