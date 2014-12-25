@@ -10,7 +10,7 @@ class PlaneObject: public SceneObject{
   float distanceFromOrigin;
 
   PlaneObject(const Vector3F &surfaceNormal, float distanceFromOrigin);
-  Vector3F & get_surfaceNormal(void) const;
+  Vector3F get_surfaceNormal(void) const;
   float get_distanceFromOrigin(void) const;
 
 };
