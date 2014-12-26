@@ -1,12 +1,12 @@
 #include "PlaneObject.hh"
 
 PlaneObject :: PlaneObject(const Vector3F &surfaceNormal, float distanceFromOrigin){
-  this->surfaceNormal = surfaceNormal;
+  this->surfaceNorm = surfaceNormal;
   this->distanceFromOrigin = distanceFromOrigin;
 }
 
 Vector3F PlaneObject :: get_surfaceNormal(void) const{
-  return surfaceNormal;
+  return surfaceNorm;
 }
 
 float PlaneObject :: get_distanceFromOrigin(void) const{
@@ -20,8 +20,8 @@ float PlaneObject :: intersection(const Ray &r) const{
   Vector3F rayDir = r.get_dir();
   Vector3F rayOrig = r.get_orig();
 
-  float denominator = rayDir * surfaceNormal;
-  float numerator = -(rayOrig * surfaceNormal + distanceFromOrigin);
+  float denominator = rayDir * surfaceNorm;
+  float numerator = -(rayOrig * surfaceNorm + distanceFromOrigin);
 
   if(denominator == 0){
     intersectionPoint = NO_INTERSECTION;
@@ -37,7 +37,6 @@ float PlaneObject :: intersection(const Ray &r) const{
   return intersectionPoint;
 }
 
-Vector3F surfaceNormal(const Vector3F &point) const{
-  return surfaceNormal;
+Vector3F PlaneObject :: surfaceNormal(const Vector3F &point) const{
+  return surfaceNorm;
 }
-
