@@ -1,17 +1,17 @@
-#ifndef _LIGHTS_HH_
-#define _LIGHTS_HH_
+#ifndef _LIGHT_HH_
+#define _LIGHT_HH_
 
 #include "Vector3F.hh"
-#include "RGBColor"
+#include "RGBColor.hh"
 
-class Lights{
+class Light{
   Vector3F position;
   RGBColor color;
 
 public:
-  Lights(Vector3F position, RGBColor color);
+  Light(Vector3F position, RGBColor color);
   Vector3F get_position(void) const;
   RGBColor get_color(void) const;
 };
 
-#endif /* _LIGHTS_HH_ */
+#endif /* _LIGHT_HH_ */

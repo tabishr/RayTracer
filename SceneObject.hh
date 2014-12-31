@@ -18,6 +18,7 @@ public:
   RGBColor surfaceColorAtPoint(const Vector3F &point) const;
   virtual float intersection(const Ray &r) const = 0;
   virtual Vector3F surfaceNormal(const Vector3F &point) const = 0;
+  virtual ~SceneObject(void);
 };
 
 #endif /* _SCENEOBJECT_HH_ */

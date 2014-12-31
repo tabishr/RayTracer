@@ -18,3 +18,4 @@ RGBColor SceneObject :: surfaceColorAtPoint(const Vector3F &point) const{
   return surfaceColor;
 }
 
+SceneObject :: ~SceneObject(void){ }

@@ -26,18 +26,25 @@ float SphereObject :: intersection(const Ray &r) const{
 }
 
 int SphereObject :: getIntersections(const Ray &r, float &t1, float &t2) const{
+
   Vector3F rayDir = r.get_dir();
   Vector3F rayOrig = r.get_orig();
   int numIntersections = 0;
 
   /* Quadratic equation coefficients */
+  /*
   float a = rayDir * rayDir;
   float b = 2 * (rayOrig * rayDir - rayDir * center);
   float c = rayOrig * rayOrig + center * center - 
     2 * (rayOrig * center) - radius * radius;
+  */
 
-  float root1 = 0;
-  float root2 = 0;
+  float a = 1;
+  float b = -3;
+  float c = 4;
+
+  float root1 = NO_INTERSECTION;
+  float root2 = NO_INTERSECTION;
   float discriminant = b*b - 4*a*c;
 
   if(discriminant > 0){
@@ -53,21 +60,20 @@ int SphereObject :: getIntersections(const Ray &r, float &t1, float &t2) const{
     }
 
     /* Smallest root always in t1 */
-    if(root1 < root2){
-      t1 = root1;
-      t2 = root2;
-    }else{
-      t1 = root2;
-      t2 = root1;
+    if(numIntersections == 2){
+      if(root1 < root2){
+	t1 = root1;
+	t2 = root2;
+      }else{
+	t1 = root2;
+	t2 = root1;
+      }
     }
 
-    if(t1 < 0){
-      t1 = NO_INTERSECTION;
+    if(numIntersections == 1){
+      
     }
 
-    if(t2 < 0){
-      t2 = NO_INTERSECTION;
-    }
   }
 
   return numIntersections;
