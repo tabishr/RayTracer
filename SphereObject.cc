@@ -32,16 +32,16 @@ int SphereObject :: getIntersections(const Ray &r, float &t1, float &t2) const{
   int numIntersections = 0;
 
   /* Quadratic equation coefficients */
-  /*
   float a = rayDir * rayDir;
   float b = 2 * (rayOrig * rayDir - rayDir * center);
   float c = rayOrig * rayOrig + center * center - 
     2 * (rayOrig * center) - radius * radius;
-  */
 
+  /*
   float a = 1;
   float b = -3;
   float c = 4;
+  */
 
   float root1 = NO_INTERSECTION;
   float root2 = NO_INTERSECTION;
