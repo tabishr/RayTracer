@@ -71,9 +71,12 @@ int SphereObject :: getIntersections(const Ray &r, float &t1, float &t2) const{
     }
 
     if(numIntersections == 1){
-      
+      if(root1 == NO_INTERSECTION){
+	t1 = root2;
+      }else{
+	t1 = root1;
+      }
     }
-
   }
 
   return numIntersections;
