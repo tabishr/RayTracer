@@ -1,5 +1,6 @@
 #include "Vector3F.hh"
 #include <gtest/gtest.h>
+#include <cmath>
 
 // Google C++ Testing Framework
 using namespace testing;
@@ -176,6 +177,21 @@ TEST(Vector3FTest, Magnitude){
   float result = v1.mag();
 
   ASSERT_FLOAT_EQ(result, 5.0);
+}
+
+TEST(Vector3FTest, Magnitude2){
+  Vector3F v1(3, -5, 10);
+  float result = v1.mag();
+  float check = sqrt(134.0);
+
+  ASSERT_FLOAT_EQ(result, check);
+}
+
+TEST(Vector3FTest, Magnitude3){
+  Vector3F v1(0, 0, 0);
+  float result = v1.mag();
+
+  ASSERT_FLOAT_EQ(result, 0);
 }
 
 TEST(Vector3FTest, MagnitudeSquared){

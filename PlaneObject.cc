@@ -21,7 +21,7 @@ float PlaneObject :: intersection(const Ray &r) const{
   Vector3F rayOrig = r.get_orig();
 
   float denominator = rayDir * surfaceNorm;
-  float numerator = -(rayOrig * surfaceNorm + distanceFromOrigin);
+  float numerator = -((rayOrig * surfaceNorm) + distanceFromOrigin);
 
   if(denominator == 0){
     intersectionPoint = NO_INTERSECTION;

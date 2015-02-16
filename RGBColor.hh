@@ -3,10 +3,13 @@
 
 #include <iostream>
 
+#define NUMCOLORS 3
+#define MAXRGB 255
+
 // RGB color representation
 class RGBColor{
   // 0: red, 1: green, 2: blue
-  float colors[3];
+  float colors[NUMCOLORS];
 
 public:
   RGBColor(void);
@@ -19,6 +22,9 @@ public:
   void set_red(const float red);
   void set_green(const float green);
   void set_blue(const float blue);
+  
+  // Ensure valid colors by clamping
+  void clamp(float minVal, float maxVal);
 
   // Color operations
   const RGBColor operator+(const RGBColor &RGBColor_RHS) const;

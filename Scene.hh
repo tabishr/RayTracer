@@ -4,6 +4,8 @@
 #include "SceneObject.hh"
 #include "Light.hh"
 #include "RGBColor.hh"
+#include "Camera.hh"
+#include "Ray.hh"
 
 #include <vector>
 
@@ -24,6 +26,7 @@ public:
   void addSceneObject(SceneObject* newSceneObject);
   void addLight(Light* newLight);
   RGBColor traceRay(const Ray &r) const;
+  void render(const Camera &camera, int imgSize, std::ostream &outputStream);
   ~Scene(void);
 };
 

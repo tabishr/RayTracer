@@ -36,6 +36,20 @@ void RGBColor::set_blue(const float blue){
   colors[2] = blue;
 }
 
+void RGBColor::clamp(float minVal, float maxVal){
+  for(int i = 0 ; i < NUMCOLORS ; i++){
+    if(colors[i] < minVal){
+      colors[i] = minVal;
+      std::cout << "Clamping from bottom" << std::endl;
+    }
+
+    if(colors[i] > maxVal){
+      colors[i] = maxVal;
+      std::cout << "Clamping from top" << std::endl;
+    }
+  }
+}
+
 const RGBColor RGBColor::operator+(const RGBColor &RGBColor_RHS) const{
   RGBColor temp = *this;
   return temp += RGBColor_RHS;

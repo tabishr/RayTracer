@@ -1,9 +1,11 @@
+#include <cassert>
+
 #include "Ray.hh"
 
 Ray :: Ray(const Vector3F &orig, const Vector3F &dir, bool normalize){
   this->orig = orig;
 
-  if(normalize == true){
+  if(normalize){
     this->dir = dir.normalize();
   }else{
     this->dir = dir;
@@ -19,5 +21,6 @@ Vector3F Ray :: get_dir(void) const{
 }
 
 Vector3F Ray::getPointAtT(float t) const{
-  return orig + t * dir;
+  assert(t >= 0);
+  return orig + (t * dir);
 }
